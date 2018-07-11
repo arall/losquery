@@ -1,5 +1,5 @@
 {
-    "name": "wrcx/losquery",
+    "name": "arall/losquery",
     "description": "PHP wrapper for Osquery",
     "keywords": ["osquery", "php"],
     "require": {
