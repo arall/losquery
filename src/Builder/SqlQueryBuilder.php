@@ -8,7 +8,7 @@ use Wrcx\Losquery\Builder\SqlQueryInterface;
 class SqlQueryBuilder implements SqlQueryInterface
 {
     protected $builder;
-    
+
     /**
      * SqlQueryBuilder constructor.
      *
@@ -24,7 +24,7 @@ class SqlQueryBuilder implements SqlQueryInterface
      *
      * @return $this
      */
-    public function from(string $table)
+    public function from($table)
     {
         $this->builder->from($table);
         return $this;
@@ -49,7 +49,7 @@ class SqlQueryBuilder implements SqlQueryInterface
      *
      * @return $this
      */
-    public function where(string $clause)
+    public function where($clause)
     {
         $this->builder->where($clause);
 
@@ -61,7 +61,7 @@ class SqlQueryBuilder implements SqlQueryInterface
      *
      * @return $this
      */
-    public function orWhere(string $clause)
+    public function orWhere($clause)
     {
         $this->builder->orWhere($clause);
 
@@ -87,7 +87,7 @@ class SqlQueryBuilder implements SqlQueryInterface
      *
      * @return $this
      */
-    public function having(string $clause)
+    public function having($clause)
     {
         $this->builder->having($clause);
 
@@ -99,7 +99,7 @@ class SqlQueryBuilder implements SqlQueryInterface
      *
      * @return $this
      */
-    public function orHaving(string $clause)
+    public function orHaving($clause)
     {
         $this->builder->orHaving($clause);
 
@@ -148,7 +148,7 @@ class SqlQueryBuilder implements SqlQueryInterface
      *
      * @return $this
      */
-    public function binding(string $key, $value = null)
+    public function binding($key, $value = null)
     {
         $bindings = $key;
         if (!is_array($bindings)) {
@@ -192,7 +192,7 @@ class SqlQueryBuilder implements SqlQueryInterface
      *
      * @return $this
      */
-    public function join(string $join, string $specification, string $clause = null, $bind = [])
+    public function join(string $join, $specification, $clause = null, $bind = [])
     {
         if (!is_array($bind)) {
             $bind = [$bind];
@@ -208,7 +208,7 @@ class SqlQueryBuilder implements SqlQueryInterface
      *
      * @return $this
      */
-    public function innerJoin(string $specification, string $clause = null, $bind = [])
+    public function innerJoin($specification, $clause = null, $bind = [])
     {
         if (!is_array($bind)) {
             $bind = [$bind];
@@ -217,7 +217,7 @@ class SqlQueryBuilder implements SqlQueryInterface
 
         return $this;
     }
-    
+
     /**
      * @param string      $specification
      * @param string|null $clause
@@ -225,7 +225,7 @@ class SqlQueryBuilder implements SqlQueryInterface
      *
      * @return $this
      */
-    public function leftJoin(string $specification, string $clause = null, $bind = [])
+    public function leftJoin($specification, $clause = null, $bind = [])
     {
         if (!is_array($bind)) {
             $bind = [$bind];
@@ -248,7 +248,7 @@ class SqlQueryBuilder implements SqlQueryInterface
      *
      * @return string
      */
-    public function raw(string $query)
+    public function raw($query)
     {
         return $query;
     }

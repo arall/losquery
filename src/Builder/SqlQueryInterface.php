@@ -10,28 +10,28 @@ interface SqlQueryInterface
      *
      * @return $this
      */
-    public function from(string $table);
+    public function from($table);
 
     /**
      * @param string|null $alias
      *
      * @return $this
      */
-    public function fromSelect($alias = NULL);
+    public function fromSelect($alias = null);
 
     /**
      * @param string $clause
      *
      * @return $this
      */
-    public function where(string $clause);
+    public function where($clause);
 
     /**
      * @param string $clause
      *
      * @return $this
      */
-    public function orWhere(string $clause);
+    public function orWhere($clause);
 
     /**
      * @param mixed $columns
@@ -45,14 +45,14 @@ interface SqlQueryInterface
      *
      * @return $this
      */
-    public function having(string $clause);
+    public function having($clause);
 
     /**
      * @param string $clause
      *
      * @return $this
      */
-    public function orHaving(string $clause);
+    public function orHaving($clause);
 
     /**
      * @param mixed $columns
@@ -81,7 +81,7 @@ interface SqlQueryInterface
      *
      * @return $this
      */
-    public function binding(string $key, $value = null);
+    public function binding($key, $value = null);
 
     /**
      * @param string $columns
@@ -105,7 +105,7 @@ interface SqlQueryInterface
      *
      * @return $this
      */
-    public function join(string $join, string $specification, string $clause = null, $bind = []);
+    public function join($join, $specification, $clause = null, $bind = []);
 
     /**
      * @param string      $specification
@@ -114,7 +114,7 @@ interface SqlQueryInterface
      *
      * @return $this
      */
-    public function innerJoin(string $specification, string $clause = null, $bind = []);
+    public function innerJoin($specification, $clause = null, $bind = []);
 
     /**
      * @param string      $specification
@@ -123,7 +123,7 @@ interface SqlQueryInterface
      *
      * @return $this
      */
-    public function leftJoin(string $specification, string $clause = null, $bind = []);
+    public function leftJoin($specification, $clause = null, $bind = []);
 
     /**
      * @return string
@@ -135,5 +135,5 @@ interface SqlQueryInterface
      *
      * @return string
      */
-    public function raw(string $query);
+    public function raw($query);
 }

@@ -11,5 +11,5 @@ interface ProcessInterface
      *
      * @return mixed
      */
-    public function run(string $command, callable $onData = null, callable $onError = null);
+    public function run($command, $onData = null, $onError = null);
 }

@@ -41,7 +41,7 @@ class Losrunner
      *
      * @return mixed
      */
-    protected function getQuery(string $query)
+    protected function getQuery($query)
     {
         $query    = trim((string) $query);
         $replaced = preg_replace("#\\s+#", " ", $query);
@@ -55,7 +55,7 @@ class Losrunner
      *
      * @return string
      */
-    protected function getCommand(string $query, $output)
+    protected function getCommand($query, $output)
     {
         $command = "echo '{$query};' | osqueryi --" . $output;
 

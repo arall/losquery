@@ -13,7 +13,7 @@ class SymfonyProcess implements ProcessInterface
     {
         $this->process = $process;
     }
-    
+
     /**
      * @param string        $command
      * @param callable|null $onData
@@ -21,16 +21,16 @@ class SymfonyProcess implements ProcessInterface
      *
      * @return $this
      */
-    public function run(string $command, callable $onData = null, callable $onError = null)
+    public function run($command, $onData = null, $onError = null)
     {
         $this->process->setCommandLine($command);
         $this->process->run(function ($type, $buffer) use ($onData, $onError) {
             $this->processResponse($type, $buffer, $onData, $onError);
         });
-        
+
         return $this;
     }
-    
+
     /**
      * @return string
      */
@@ -38,14 +38,14 @@ class SymfonyProcess implements ProcessInterface
     {
         return $this->process->getOutput();
     }
-    
+
     /**
      * @param               $type
      * @param               $buffer
      * @param callable|null $onData
      * @param callable|null $onError
      */
-    protected function processResponse($type, $buffer, callable $onData = null, callable $onError = null)
+    protected function processResponse($type, $buffer, $onData = null, $onError = null)
     {
         if ($type === "err") {
             if ($onError !== null) {
