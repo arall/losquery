@@ -34,7 +34,7 @@ class Config
      *
      * @return object
      */
-    public static function getConfig(string $config)
+    public static function getConfig($config)
     {
         $configs = self::config();
         $method = $configs[$config];
