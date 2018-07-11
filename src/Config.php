@@ -36,6 +36,8 @@ class Config
      */
     public static function getConfig(string $config)
     {
-        return self::config()[$config]();
+        $configs = self::config();
+        $method = $configs[$config];
+        return $method();
     }
 }
