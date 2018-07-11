@@ -192,7 +192,7 @@ class SqlQueryBuilder implements SqlQueryInterface
      *
      * @return $this
      */
-    public function join(string $join, $specification, $clause = null, $bind = [])
+    public function join($join, $specification, $clause = null, $bind = [])
     {
         if (!is_array($bind)) {
             $bind = [$bind];
